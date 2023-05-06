@@ -4,10 +4,10 @@ Global basic hook for daily checks of commit messages.
 
 Current state - `WIP`.
 
-## Use Case & Usage
+## Usage
 ..
 
-## Install
+## Installation
 
 Create directory with hooks in home directory. And set permission for.
 
