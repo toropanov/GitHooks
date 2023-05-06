@@ -1,15 +1,22 @@
 #!/bin/bash
 
-REQUIRED_WORDS="^(fix|refactor|change|update|add|remove|replace)"
-MIN_COMMIT_LENGTH=10
+REQUIRED_WORDS="^(fix|enable|refactor|change|update|add|remove|replace|delete)"
+MIN_LENGTH=10
+MAX_LENGTH=150
 ERROR_TITLE="Git Error"
 
 message=$(cat "${1:?Missing commit message file}")
 length=$(echo -n $message | wc -m)
 
-if [ $length -lt $MIN_COMMIT_LENGTH ]; then
+if [ $length -lt $MIN_LENGTH ]; then
   echo $ERROR_TITLE
   echo "The length less than ${MIN_LENGTH}";
+  exit 1
+fi
+
+if [ $length -gt $MAX_LENGTH ]; then
+  echo $ERROR_TITLE
+  echo "The length less greater ${MAX_LENGTH}";
   exit 1
 fi
 
