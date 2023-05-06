@@ -1,10 +1,11 @@
-That's initial comment for project. It's still in WIP and not ready for daily usage.
+# Git Precommit hook
 
-The main idea is to create global hooks for daily checks of commit messages and etc.
+Global basic hook for daily checks of commit messages.
 
-## Available hooks
-- [x] commit-msg
+Current state - `WIP`.
 
+## Use Case & Usage
+..
 
 ## Install
 
@@ -28,3 +29,8 @@ And finally - Make them to trigger globally on all your git commands.
 ```
 git config --global core.hooksPath ~/.git-hooks
 ```
+
+## TODO
+
+- [ ] Finish README file
+<!-- https://stackoverflow.com/questions/229551/how-to-check-if-a-string-contains-a-substring-in-bash -->
