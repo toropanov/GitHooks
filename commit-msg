@@ -1,0 +1,16 @@
+#!/bin/bash
+
+MSG=$(cat "${1:?Missing commit message file}")
+MIN_LENGTH=10
+
+length=$(echo -n $MSG | wc -m)
+
+if echo "$MSG" | grep -iq "wip"; then
+  echo "Error: Includes the word 'WIP'"
+  exit 1
+fi
+
+if [ $length -lt $MIN_LENGTH ]; then
+  echo "Error: The length less than 10";
+  exit 1
+fi
