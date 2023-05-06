@@ -1,16 +1,23 @@
 #!/bin/bash
 
-MSG=$(cat "${1:?Missing commit message file}")
-MIN_LENGTH=10
+REQUIRED_WORDS="^(fix|refactor|change|update|add|remove|replace)"
+MIN_COMMIT_LENGTH=10
+ERROR_TITLE="Git Error"
 
-length=$(echo -n $MSG | wc -m)
+message=$(cat "${1:?Missing commit message file}")
+length=$(echo -n $message | wc -m)
 
-if echo "$MSG" | grep -iq "wip"; then
-  echo "Error: Includes the word 'WIP'"
+if [ $length -lt $MIN_COMMIT_LENGTH ]; then
+  echo $ERROR_TITLE
+  echo "The length less than ${MIN_LENGTH}";
   exit 1
 fi
 
-if [ $length -lt $MIN_LENGTH ]; then
-  echo "Error: The length less than 10";
+if echo "$message" | egrep -iq "$REQUIRED_WORDS" ;
+then
+  echo "Prehook passed!"
+else
+  echo $ERROR_TITLE
+  echo "Use next pattern - ${REQUIRED_WORDS}"
   exit 1
 fi
