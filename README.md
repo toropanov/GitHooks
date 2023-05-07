@@ -11,8 +11,8 @@ Before you can run the precommit hook, you need to move it to your global (or no
 Create a directory with hooks in the home directory. And set permission for
 
 ```
-mkdir ~/.githooks
-chmod ug+x ~/.githooks
+mkdir ~/.git-hooks
+chmod ug+x ~/.git-hooks
 ```
 
 Then copy your exact hooks to the newly created folder and set permissions for them also.
