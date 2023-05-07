@@ -1,36 +1,29 @@
 # Git Precommit hook
 
-Global basic hook for daily checks of commit messages.
+It could be quite useful to check every commit message before submission. It keeps your git log readable and prevents messages like 'WIP'.
 
-Current state - `WIP`.
-
-## Usage
-..
+The current state of development is `In progress`, but I already use it daily.
 
 ## Installation
 
-Create directory with hooks in home directory. And set permission for.
+Before you can run the precommit hook, you need to move it to your global (or not) hooks folder. Use three easy steps for
+
+Create a directory with hooks in the home directory. And set permission for
 
 ```
 mkdir ~/.githooks
 chmod ug+x ~/.githooks
 ```
 
-Then copy your exact hooks to created folder.
-And set permissions for them also.
+Then copy your exact hooks to the newly created folder and set permissions for them also.
 
 ```
 cp commit-msg ~/.git-hooks/
 chmod ug+x ~/.git-hooks/commit-msg
 ```
 
-And finally - Make them to trigger globally on all your git commands.
+And finally, make them trigger globally on all your git commands.
 
 ```
 git config --global core.hooksPath ~/.git-hooks
 ```
-
-## TODO
-
-- [ ] Finish README file
-<!-- https://stackoverflow.com/questions/229551/how-to-check-if-a-string-contains-a-substring-in-bash -->

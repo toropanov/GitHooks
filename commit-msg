@@ -10,13 +10,7 @@ length=$(echo -n $message | wc -m)
 
 if [ $length -lt $MIN_LENGTH ]; then
   echo $ERROR_TITLE
-  echo "The length less than ${MIN_LENGTH}";
-  exit 1
-fi
-
-if [ $length -gt $MAX_LENGTH ]; then
-  echo $ERROR_TITLE
-  echo "The length less greater ${MAX_LENGTH}";
+  echo "The length less than $MIN_LENGTH.";
   exit 1
 fi
 
@@ -26,5 +20,11 @@ then
 else
   echo $ERROR_TITLE
   echo "Use next pattern - ${REQUIRED_WORDS}"
+  exit 1
+fi
+
+if [ $length -gt $MAX_LENGTH ]; then
+  echo $ERROR_TITLE
+  echo "The length less greater $MAX_LENGTH.";
   exit 1
 fi
