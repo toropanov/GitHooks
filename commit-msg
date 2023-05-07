@@ -25,6 +25,6 @@ fi
 
 if [ $length -gt $MAX_LENGTH ]; then
   echo $ERROR_TITLE
-  echo "The length less greater $MAX_LENGTH.";
+  echo "The length greater $MAX_LENGTH.";
   exit 1
 fi
