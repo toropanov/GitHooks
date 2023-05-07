@@ -4,6 +4,8 @@ It could be quite useful to check every commit message before submission. It kee
 
 The current state of development is `In progress`, but I already use it daily.
 
+In case some of your projects have their own precommit hook, my hook would not prevent them from calling.
+
 ## Installation
 
 Before you can run the precommit hook, you need to move it to your global (or not) hooks folder. Use three easy steps for
